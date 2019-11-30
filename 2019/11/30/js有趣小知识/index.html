@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">music | Zanning</title>
+  <title itemprop="name">Zanning</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -314,66 +314,121 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/music.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        喜欢的音乐</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-<meting-js server="netease" type="playlist" id="2731690811" mutex="true">
-</meting-js>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-<meting-js server="netease" type="playlist" id="419239189" mutex="true">
-</meting-js>
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title"></h1>
+            <p class="entry-census">&nbsp;·&nbsp;2019-11-30&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
 
-      <!-- .entry-content -->
-      
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/zgifubao.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6../images/donate/weixinpay.jpg"></li>
-            </ul>
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h1 id="js有趣小知识"><a href="#js有趣小知识" class="headerlink" title="js有趣小知识"></a>js有趣小知识</h1><p>2.五大类型中，关于null</p>
+<p>Js有五大数据类型boolean，string，number，undefined，object。而为什么</p>
+<p>1<br>typeof null<br>会被解析为 object 呢？</p>
+<p>原因是在计算机底层存储数据时是以二进制格式进行存储的，如果前三位为0的话会被解析为object数据类型。而null的所有位数都为0，当解析null时，前三位先被解析，计算机错认为null为object类型，这属于计算机语言层面的一个bug。</p>
+<p>2、NaN什么情况下等于NaN？<br>NaN，即非数值（Not a Number）是一个特殊的数值，它与任何值都不相等，包括NaN本身。不管是执行NaN == NaN还是NaN === NaN都会返回false。<br>那么NaN在什么情况下会等于NaN呢？见证奇迹的时刻，</p>
+<p>let set = new Set();<br>let a = NaN;<br>let b = NaN;<br>set.add(a);<br>set.add(b);<br>set // Set {NaN}<br>我们利用Set不会添加重复的值得特性，往里面添加了两个NaN，结果第二个NaN被认为重复数字被去重了。可见，在Set里，NaN是相等的。</p>
+<p>4、a==1 &amp;&amp; a==2 &amp;&amp; a==3<br>如何让上例等式成立？<br>用到的知识点是js中的隐式转换。如果一个操作数是对象，则调用对象的valueOf()方法，用得到的基本类型值按照前面的规则进行比较；所以我们重写valueOf就好了。</p>
+<p>var a = {<br>  i: 1,<br>  valueOf() {<br>    return a.i++;<br>  }<br>}</p>
+<p>if( a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3 ) {<br>  console.log(1);<br>}</p>
+<p>在数学的领域里，毫无悬念，0.1+0.2=0.3。但是在JavaScript中，运行</p>
+<p>0.1 + 0.2 === 0.3 // false<br>结果却是false。简单说明一下<br>JavaScript使用Number类型表示数字，包括整数和浮点数，遵循 IEEE 754标准。<br>将两数分别转换为二进制：</p>
+<p>0.1 -&gt; 0.0001100110011001…(无限循环)<br>0.2 -&gt; 0.0011001100110011…(无限循环)<br>根据双精度浮点数的定义，Number类型中有效的整数范围是-0x1fffffffffffff至0x1fffffffffffff，所以Number无法精确表示此范围外的整数。<br>那么这里有两个问题：</p>
+<p>既然0.1是转换成二进制是无限循环小数，那么为什么我们使用0.1的时候，0.1就是0.1并没有出现精度丢失的问题？<br>那我们如果进行0.1+0.2=0.3的比较呢？<br>首先第一个问题，0.1之所以等于0.1，因为0.1失去精度后等于0.10000000000000000555，而js的数字精度为2**53，长度为16位。0.10000000000000000555.toPrecision(16)刚好位0.1。<br>第二个问题，可以用JavaScript提供的最小精度值来判断</p>
+<p>console.log( Math.abs(0.1 + 0.2 - 0.3) &lt;= Number.EPSILON);</p>
+<p>作者：anjohnlv<br>链接：<a href="https://www.jianshu.com/p/e285eaefb145" target="_blank" rel="noopener">https://www.jianshu.com/p/e285eaefb145</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/zgifubao.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6../images/donate/weixinpay.jpg"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Hexo-Theme-Sakura</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg" itemprop="image" alt="Zanning" height="70" width="70"></a>
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://sakura.hojun.cn" itemprop="url" rel="author">Zanning</a>
+            <a href="" itemprop="url" rel="author"></a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
+        <p><i class="iconfont icon-write"></i></p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
