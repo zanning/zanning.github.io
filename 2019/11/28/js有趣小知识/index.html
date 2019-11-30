@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">donate | Zanning</title>
+  <title itemprop="name">开篇·js有趣小知识 | Zanning</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -283,107 +283,266 @@
   </div>
 </header>
 
-      <link rel="stylesheet" href="/css/donate.css">
-<div class="pattern-center-blank">
-</div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/donate.jpg" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/donate.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      开篇·js有趣小知识</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">Zanning</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-11-28<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="entry-title">谢谢饲主了喵~</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
-  <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-  如果喜欢我的博客，可以考虑资助一下哦~非常感激！
-    <div id="root">
-      <div class="root">
-        <a href="https://github.com/Kaiyuan/donate-page" target="_blank" class="pos-f tr3" title="Github"><span id="github"></span></a>
-        <ul id="donateBox" class="list pos-f tr3">
-          <!-- <li id="BTC" data-footnote="Copy addres and show QRCod"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li> -->
-          <!-- <li id="PayPal"><a href="https://www.paypal.me/hojuncn" target="_blank">PayPal</a></li> -->
-          <li id="AliPay">AliPay</li>
-          <li id="WeChat">WeChat</li>
-        </ul>
-        <div id="DonateText" class="tr3">Donate</div>
-        <div id="QRBox" class="pos-f left-100">
-          <div id="MainBox"></div>
-        </div>
-        <!-- Bitcoin 账号 -->
-        <!-- <input id="btc-key" type="text" value="14JkMR68n4PBASB3TgvpjtaPTbfffSwFbW" readonly="readonly"> -->
-      </div>
-    </div>
-    <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-    <footer class="post-footer">
-      <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-      <div class="post-tags">
-      </div>
-      <div class="post-share">
-        <div class="social-share sharehidden share-component"></div>
-        <i class="iconfont show-share icon-forward"></i>
-      </div>
-    </footer><!-- .entry-footer -->
-  </article>
-  <section class="author-profile">
-    <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
-      <div class="meta">
-        <span class="title">Author</span>
-        <h3 itemprop="name">
-        <a href="https://sakura.hojun.cn" itemprop="url" rel="author">hojun</a>
-        </h3>
-      </div>
-    </div>
-    <hr>
-    <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
-  </section>
-</div>
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script> -->
-  <script>
-    jQuery(document).ready(function() {
-    var QRBox = $('#QRBox');
-    var MainBox = $('#MainBox');
-    var BTCQR = '/images/donate/BTCQR.png'; // 二维码路径
-    var AliPayQR  = '../images/donate/zhifubao.jpg';
-    var WeChanQR  = '../images/donate/weixinpay.jpg';
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="js有趣小知识"><a href="#js有趣小知识" class="headerlink" title="js有趣小知识"></a>js有趣小知识</h1><h2 id="1、NaN什么情况下等于NaN？"><a href="#1、NaN什么情况下等于NaN？" class="headerlink" title="1、NaN什么情况下等于NaN？"></a>1、NaN什么情况下等于NaN？</h2><p>NaN，即非数值（Not a Number）是一个特殊的数值，它与任何值都不相等，包括NaN本身。不管是执行NaN == NaN还是NaN === NaN都会返回false。<br>那么NaN在什么情况下会等于NaN呢？见证奇迹的时刻，</p>
+<pre><code class="yml">let set = new Set();
+let a = NaN;
+let b = NaN;
+set.add(a);
+set.add(b);
+set // Set {NaN}
+</code></pre>
+<p>我们利用Set不会添加重复的值得特性，往里面添加了两个NaN，结果第二个NaN被认为重复数字被去重了。可见，在Set里，NaN是相等的。</p>
+<h2 id="2、五大类型中，关于null"><a href="#2、五大类型中，关于null" class="headerlink" title="2、五大类型中，关于null"></a>2、五大类型中，关于null</h2><p>Js有五大数据类型boolean，string，number，undefined，object。而为什么 typeof null 会被解析为 object 呢？</p>
+<p>原因是在计算机底层存储数据时是以二进制格式进行存储的，如果前三位为0的话会被解析为object数据类型。而null的所有位数都为0，当解析null时，前三位先被解析，计算机错认为null为object类型，这属于计算机语言层面的一个bug。</p>
+<h2 id="3、a-1-amp-amp-a-2-amp-amp-a-3"><a href="#3、a-1-amp-amp-a-2-amp-amp-a-3" class="headerlink" title="3、a==1 &amp;&amp; a==2 &amp;&amp; a==3"></a>3、a==1 &amp;&amp; a==2 &amp;&amp; a==3</h2><p>如何让上例等式成立？<br>用到的知识点是js中的隐式转换。如果一个操作数是对象，则调用对象的valueOf()方法，用得到的基本类型值按照前面的规则进行比较；所以我们重写valueOf就好了。</p>
+<pre><code class="yml">var a = {
+  i: 1,
+  valueOf() {
+    return a.i++;
+  }
+}
 
-    function showQR(QR) {
-      if (QR) {
-        MainBox.css('background-image','url('+QR+')');
-      }
-      $('#DonateText,#donateBox,#github').addClass('blur');
-      QRBox.fadeIn(300,function(argument) {
-        MainBox.addClass('showQR');
-      });
+if( a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3 ) {
+  console.log(1);
+}
+</code></pre>
+<h2 id="4、0-1-0-2-0-3"><a href="#4、0-1-0-2-0-3" class="headerlink" title="4、0.1+0.2=0.3?"></a>4、0.1+0.2=0.3?</h2><p>在数学的领域里，毫无悬念，0.1+0.2=0.3。但是在JavaScript中，运行</p>
+<pre><code class="yml">0.1 + 0.2 === 0.3 // false
+</code></pre>
+<p>结果却是false。简单说明一下<br>JavaScript使用Number类型表示数字，包括整数和浮点数，遵循 IEEE 754标准。<br>将两数分别转换为二进制：</p>
+<pre><code class="yml">0.1 -&gt; 0.0001100110011001...(无限循环)
+0.2 -&gt; 0.0011001100110011...(无限循环)
+</code></pre>
+<p>根据双精度浮点数的定义，Number类型中有效的整数范围是-0x1fffffffffffff至0x1fffffffffffff，所以Number无法精确表示此范围外的整数。</p>
+<p>那么这里有两个问题：<br>既然0.1是转换成二进制是无限循环小数，那么为什么我们使用0.1的时候，0.1就是0.1并没有出现精度丢失的问题？<br>那我们如果进行0.1+0.2=0.3的比较呢？</p>
+<p>首先第一个问题，0.1之所以等于0.1，因为0.1失去精度后等于0.10000000000000000555，而js的数字精度为2**53，长度为16位。0.10000000000000000555.toPrecision(16)刚好位0.1。</p>
+<p>第二个问题，可以用JavaScript提供的最小精度值来判断</p>
+<pre><code class="yml">console.log( Math.abs(0.1 + 0.2 - 0.3) &lt;= Number.EPSILON);
+</code></pre>
+<h2 id="5、小题目"><a href="#5、小题目" class="headerlink" title="5、小题目"></a>5、小题目</h2><p>改造下面的代码，使之输出0 - 9，写出你能想到的所有解法。</p>
+<p> 首先作为前端开发者，你起码得知道下面的代码会输出什么，强烈建议自己动手试试能写出多少种解法。</p>
+<pre><code class="yml">for (var i = 0; i&lt; 10; i++){
+    setTimeout(() =&gt; {
+        console.log(i);
+    }, 1000)
+}
+</code></pre>
+<h4 id="解法风暴"><a href="#解法风暴" class="headerlink" title="解法风暴"></a>解法风暴</h4><p>console.log(i)在执行时，会按照词法作用域来取得循环条件中的变量 i的值，本题的基本思路实际上就是如何在console.log语句和for循环条件之间添加（或修改）代码来隔离变量 i的词法作用域。</p>
+<h3 id="解法一：最容易想到的方法——ES6块级作用域"><a href="#解法一：最容易想到的方法——ES6块级作用域" class="headerlink" title="解法一：最容易想到的方法——ES6块级作用域"></a>解法一：最容易想到的方法——ES6块级作用域</h3><p>//最容易想到的就是使用let实现的局部作用域</p>
+<pre><code class="yml">for (let i = 0; i&lt; 10; i++){
+    setTimeout(() =&gt; {
+        console.log(i);
+    }, 1000)
+}
+//变式
+for (var i = 0; i&lt; 10; i++){
+    let a = i;
+    setTimeout(() =&gt; {
+        console.log(a);
+    }, 1000)
+}
+</code></pre>
+<h3 id="解法二：大多数前端曾接触过的第一种方法——IIFE（立即执行函数）"><a href="#解法二：大多数前端曾接触过的第一种方法——IIFE（立即执行函数）" class="headerlink" title="解法二：大多数前端曾接触过的第一种方法——IIFE（立即执行函数）"></a>解法二：大多数前端曾接触过的第一种方法——IIFE（立即执行函数）</h3><pre><code class="yml">for(var i = 0; i &lt; 10; i++){
+    (function(i){
+        setTimeout(() =&gt; { 
+            console.log(i);
+        },1000)   
+     })(i);
+}
+</code></pre>
+<h3 id="解法三：比较优雅的做法——setTimeout可以接收多个参数"><a href="#解法三：比较优雅的做法——setTimeout可以接收多个参数" class="headerlink" title="解法三：比较优雅的做法——setTimeout可以接收多个参数"></a>解法三：比较优雅的做法——setTimeout可以接收多个参数</h3><pre><code class="yml">//setTimeout的函数签名是setTimeout(fn, delay, ...params)，params会作为fn执行时的实参传入
+for (var i = 0; i&lt; 10; i++){
+    setTimeout((i) =&gt; {
+        console.log(i);
+    }, 1000, i);
+}
+</code></pre>
+<h3 id="解法四：利用函数方法bind为setTimeout传入预设参数"><a href="#解法四：利用函数方法bind为setTimeout传入预设参数" class="headerlink" title="解法四：利用函数方法bind为setTimeout传入预设参数"></a>解法四：利用函数方法bind为setTimeout传入预设参数</h3><pre><code class="yml">/*Function.prototype.bind(thisArg, ...args)
+* 会得到一个新函数，新函数执行时预先设置了this和一部分参数，相当于把setTimeout改造成了偏函数
+* bind执行后，setTimeout的第一个参数仍然是一个函数。
+*/
+for (var i = 0; i &lt; 10; i++){
+    setTimeout(((i) =&gt; {
+        console.log(i);
+    }).bind(null,i), 1000);
+} 
+</code></pre>
+<h3 id="解法五：利用禁术with"><a href="#解法五：利用禁术with" class="headerlink" title="解法五：利用禁术with"></a>解法五：利用禁术with</h3><pre><code class="yml">//with的作用是延长作用域链会在词法作用域末端继续添加参数定义，在正式开发中通常是禁用的。
+
+for(var i = 0; i &lt; 10; i++){ 
+    with({i}){
+        setTimeout(() =&gt; { console.log(i); },1000)    
     }
+ } 
+</code></pre>
+<h3 id="解法六：利用Promise传递决议结果来隔离作用域"><a href="#解法六：利用Promise传递决议结果来隔离作用域" class="headerlink" title="解法六：利用Promise传递决议结果来隔离作用域"></a>解法六：利用Promise传递决议结果来隔离作用域</h3><pre><code class="yml">//在每一轮循环中的i作为实参传递给promise的onFinished函数实现作用域隔离
+for(var i = 0; i &lt; 10; i++){ 
+      new Promise((resolve,reject)=&gt;{
+          resolve(i);
+    }).then((i)=&gt;{
+        setTimeout(() =&gt; { console.log(i); },1000)    
+    }).catch(err=&gt;{
+        console.log(err);
+    })
+  }
+</code></pre>
+<h3 id="解法七：利用try…catch来隔离作用域"><a href="#解法七：利用try…catch来隔离作用域" class="headerlink" title="解法七：利用try…catch来隔离作用域"></a>解法七：利用try…catch来隔离作用域</h3><pre><code class="yml">for(var i = 0; i &lt; 10; i++){ 
+    try{
+       throw i;
+    }catch(i){
+       setTimeout(() =&gt; { console.log(i); },1000)    
+    }
+  } 
+</code></pre>
+<h3 id="解法八：浏览器环境下setTimeout第一个参数可以为undefined-node-js中会报错"><a href="#解法八：浏览器环境下setTimeout第一个参数可以为undefined-node-js中会报错" class="headerlink" title="解法八：浏览器环境下setTimeout第一个参数可以为undefined(node.js中会报错)"></a>解法八：浏览器环境下setTimeout第一个参数可以为undefined(node.js中会报错)</h3><pre><code class="yml">//console.log相当于同步运行，跟setTimeout实际没什么关系了
+for (var i = 0; i&lt; 10; i++){
+    setTimeout(
+        console.log(i)
+    , 1000)
+}
+</code></pre>
+<h3 id="解法九：篡改console-log"><a href="#解法九：篡改console-log" class="headerlink" title="解法九：篡改console.log"></a>解法九：篡改console.log</h3><pre><code class="yml">let result = [];
+let consoleLog = console.log;
+console.log = (n)=&gt; {
+    result.push(n);
+    if(result.length === 10) result.map((i,id)=&gt;consoleLog(id));
+}
 
-    $('#donateBox>li').click(function(event) {
-      var thisID  = $(this).attr('id');
-      if (thisID === 'BTC') {
-        new ClipboardJS('#BTCBn');
-        new ClipboardJS('.btnsss');
-        showQR(BTCQR);
-      } else if (thisID === 'AliPay') {
-        showQR(AliPayQR);
-      } else if (thisID === 'WeChat') {
-        showQR(WeChanQR);
-      }
-    });
+for(var i = 0; i &lt; 10; i++){
+    setTimeout(() =&gt; { 
+        console.log(i);
+    },1000)   
+}
 
-    MainBox.click(function(event) {
-      MainBox.removeClass('showQR').addClass('hideQR');
-      setTimeout (function(a) {
-        QRBox.fadeOut(300,function(argument) {
-          MainBox.removeClass('hideQR');
-        });
-        $('#DonateText,#donateBox,#github').removeClass('blur');
-      },600);
+//变式——稍微有点欠扁
+ console.log = (function(){
+                  let consoleLog = console.log;
+                  let i = 0;
+                  return n =&gt; i++ === 9 &amp;&amp; consoleLog(&#39;0,1,2,3,4,5,6,7,8,9&#39;);
+               })();
 
-    });
-  });
-  </script>
+for(var i = 0; i &lt; 10; i++){
+    setTimeout(() =&gt; { 
+        console.log(i);
+    },1000)   
+}
+</code></pre>
+<h3 id="解法十：不按套路出牌的骚操作"><a href="#解法十：不按套路出牌的骚操作" class="headerlink" title="解法十：不按套路出牌的骚操作"></a>解法十：不按套路出牌的骚操作</h3><pre><code class="yml">for (var i = 0; i &lt; 10; i++){
+    setTimeout(() =&gt; {
+        console.log(i++ % 10);
+    }, 1000);
+} 
+
+//变式
+for (var i = 0; i &lt; 10; i++){
+    setTimeout(() =&gt; {
+        console.log(i++);
+    }, 1000);
+}
+i = 0; 
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="../../../../images/donate/zhifubao.jpg"></li>
+                <li class="wechat-code"><img src="../../../../images/donate/weixinpay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Hexo-Theme-Sakura</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg" itemprop="image" alt="Zanning" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">Zanning</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>正在路上。。</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
 
     </div>    
     <div class="ins-search">
