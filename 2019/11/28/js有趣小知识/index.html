@@ -224,6 +224,27 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/vue/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          vue
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/react/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          react
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/node/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          node
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -330,7 +351,18 @@ set // Set {NaN}
 <p>我们利用Set不会添加重复的值得特性，往里面添加了两个NaN，结果第二个NaN被认为重复数字被去重了。可见，在Set里，NaN是相等的。</p>
 <h2 id="2、五大类型中，关于null"><a href="#2、五大类型中，关于null" class="headerlink" title="2、五大类型中，关于null"></a>2、五大类型中，关于null</h2><p>Js有五大数据类型boolean，string，number，undefined，object。而为什么 typeof null 会被解析为 object 呢？</p>
 <p>原因是在计算机底层存储数据时是以二进制格式进行存储的，如果前三位为0的话会被解析为object数据类型。而null的所有位数都为0，当解析null时，前三位先被解析，计算机错认为null为object类型，这属于计算机语言层面的一个bug。</p>
-<h2 id="3、a-1-amp-amp-a-2-amp-amp-a-3"><a href="#3、a-1-amp-amp-a-2-amp-amp-a-3" class="headerlink" title="3、a==1 &amp;&amp; a==2 &amp;&amp; a==3"></a>3、a==1 &amp;&amp; a==2 &amp;&amp; a==3</h2><p>如何让上例等式成立？<br>用到的知识点是js中的隐式转换。如果一个操作数是对象，则调用对象的valueOf()方法，用得到的基本类型值按照前面的规则进行比较；所以我们重写valueOf就好了。</p>
+<h2 id="3、a-1-amp-amp-a-2-amp-amp-a-3"><a href="#3、a-1-amp-amp-a-2-amp-amp-a-3" class="headerlink" title="3、a==1 &amp;&amp; a==2 &amp;&amp; a==3"></a>3、a==1 &amp;&amp; a==2 &amp;&amp; a==3</h2><p>如何让上例等式成立？</p>
+<p>js调用==进行比较时，不同与===，双等号会触发类型转换，进行比较的事实上不是原始值，而是valueOf()的返回值，类型转换可能会触发两个函数，分别是toString()与valueOf()</p>
+<pre><code class="yml">let obj2={
+  arr:[1,2,3],
+  toString:()=&gt;{
+    console.log(&quot;toString&quot;)
+  },
+  valueOf:()=&gt;{
+    console.log(&quot;valueOf&quot;)
+  }
+</code></pre>
+<p>接着在控制台输入==来进行比较操作，打印结果为valueof。所以的确是调用了valueOf()，因此我们可以在这里做一些手脚。</p>
 <pre><code class="yml">var a = {
   i: 1,
   valueOf() {
@@ -341,6 +373,17 @@ set // Set {NaN}
 if( a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3 ) {
   console.log(1);
 }
+</code></pre>
+<p>还可以利用definProperty的get方法，js调用对象属性时时经过了get与set一层的，我们可以在这里进行改动。</p>
+<pre><code class="yml">let a={
+    temp:&#39;&#39;,
+    time:0
+}
+Object.defineProperty(a,&quot;temp&quot;,{
+    get:function(){
+        return a.time++;
+    }
+})
 </code></pre>
 <h2 id="4、0-1-0-2-0-3"><a href="#4、0-1-0-2-0-3" class="headerlink" title="4、0.1+0.2=0.3?"></a>4、0.1+0.2=0.3?</h2><p>在数学的领域里，毫无悬念，0.1+0.2=0.3。但是在JavaScript中，运行</p>
 <pre><code class="yml">0.1 + 0.2 === 0.3 // false
@@ -430,53 +473,6 @@ for(var i = 0; i &lt; 10; i++){
     }
   } 
 </code></pre>
-<h3 id="解法八：浏览器环境下setTimeout第一个参数可以为undefined-node-js中会报错"><a href="#解法八：浏览器环境下setTimeout第一个参数可以为undefined-node-js中会报错" class="headerlink" title="解法八：浏览器环境下setTimeout第一个参数可以为undefined(node.js中会报错)"></a>解法八：浏览器环境下setTimeout第一个参数可以为undefined(node.js中会报错)</h3><pre><code class="yml">//console.log相当于同步运行，跟setTimeout实际没什么关系了
-for (var i = 0; i&lt; 10; i++){
-    setTimeout(
-        console.log(i)
-    , 1000)
-}
-</code></pre>
-<h3 id="解法九：篡改console-log"><a href="#解法九：篡改console-log" class="headerlink" title="解法九：篡改console.log"></a>解法九：篡改console.log</h3><pre><code class="yml">let result = [];
-let consoleLog = console.log;
-console.log = (n)=&gt; {
-    result.push(n);
-    if(result.length === 10) result.map((i,id)=&gt;consoleLog(id));
-}
-
-for(var i = 0; i &lt; 10; i++){
-    setTimeout(() =&gt; { 
-        console.log(i);
-    },1000)   
-}
-
-//变式——稍微有点欠扁
- console.log = (function(){
-                  let consoleLog = console.log;
-                  let i = 0;
-                  return n =&gt; i++ === 9 &amp;&amp; consoleLog(&#39;0,1,2,3,4,5,6,7,8,9&#39;);
-               })();
-
-for(var i = 0; i &lt; 10; i++){
-    setTimeout(() =&gt; { 
-        console.log(i);
-    },1000)   
-}
-</code></pre>
-<h3 id="解法十：不按套路出牌的骚操作"><a href="#解法十：不按套路出牌的骚操作" class="headerlink" title="解法十：不按套路出牌的骚操作"></a>解法十：不按套路出牌的骚操作</h3><pre><code class="yml">for (var i = 0; i &lt; 10; i++){
-    setTimeout(() =&gt; {
-        console.log(i++ % 10);
-    }, 1000);
-} 
-
-//变式
-for (var i = 0; i &lt; 10; i++){
-    setTimeout(() =&gt; {
-        console.log(i++);
-    }, 1000);
-}
-i = 0; 
-</code></pre>
 
         </div>
         <!-- .entry-content -->
@@ -505,23 +501,6 @@ i = 0;
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-        
-          
-            <div class="post-nepre full next">
-          
-            <a href="/2018/12/12/Hexo-Theme-Sakura/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                Hexo-Theme-Sakura</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
         
       </section>
       
@@ -725,6 +704,27 @@ $(document).ready(function() {
                 <a href="/categories/生活/">
                   <i class="fa fa-file-text-o" aria-hidden="true"></i>
                   生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/vue/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  vue
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/react/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  react
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/node/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  node
                 </a>
               </li>
             
